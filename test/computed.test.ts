@@ -212,7 +212,7 @@ test('ComputedValue can be a copy deps', () => {
 });
 
 test('only execute computed function when deps changed', () => {
-  const spy = jest.fn().mockImplementation(() => {
+  const spy = vitest.fn().mockImplementation(() => {
     model.state.a;
   });
 

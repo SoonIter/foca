@@ -68,8 +68,8 @@ afterEach(() => {
         },
       );
 
-      const key1 = `${result.current.name}[pureAsync]`;
-      const key2 = `${basicModel.name}[pureAsync]`;
+      const key1 = `${result.current.name}.pureAsync`;
+      const key2 = `${basicModel.name}.pureAsync`;
       expect(loadingStore.getState()).not.toHaveProperty(key1);
 
       await act(async () => {
@@ -93,7 +93,7 @@ afterEach(() => {
     });
 
     test('call onDestroy event when local model is destroyed', async () => {
-      const spy = jest.fn();
+      const spy = vitest.fn();
       const globalModel = defineModel('local-demo-1', {
         initialState: {},
         events: {

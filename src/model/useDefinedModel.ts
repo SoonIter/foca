@@ -62,7 +62,8 @@ const useDevName = (modelName: string, count: number, err: Error) => {
       const stacks = err.stack!.split('\n');
 
       const innerNamePattern = new RegExp(
-        `at\\s${useDefinedModel.name}\\s\\(`,
+        // vitest测试框架的stack增加了 Module.
+        `at\\s(?:Module\.)?${useDefinedModel.name}\\s\\(`,
         'i',
       );
       const componentNamePattern = /at\s(.+?)\s\(/i;

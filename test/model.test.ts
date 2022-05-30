@@ -165,7 +165,7 @@ test('define duplicated method keys will throw error', () => {
 });
 
 test('Warning when using deprecated hooks field', () => {
-  const spy = jest.spyOn(console, 'warn');
+  const spy = vitest.spyOn(console, 'warn');
   defineModel('hooks' + Math.random(), {
     initialState: {},
     hooks: {},
